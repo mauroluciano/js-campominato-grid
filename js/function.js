@@ -1,9 +1,21 @@
-const cellsContainer = document.getElementById("cell-container");
+//- creo una lista di numeri da 1 a 100
+let button = document.getElementById("generate-grid");
+button.addEventListener("click", function () {
+  const cellsContainer = document.getElementById("cells-container");
+  const totalCell = 10 * 10;
 
-const totalCell = 8 * 8;
+  for (let i = 1; i <= totalCell; i++) {
+    const cell = document.createElement("li");
+    cell.innerText = i;
+    cell.classList.add("cell");
+    cellsContainer.append(cell);
 
-const cell = document.createElement("li");
+    cell.addEventListener("click", function () {
+      cell.classList.add("yellow");
+    });
+  }
+});
 
-cell.innerText = "1";
 
-cell.classList.add("cell");
+
+///////
